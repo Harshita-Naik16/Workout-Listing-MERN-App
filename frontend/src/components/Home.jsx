@@ -7,11 +7,13 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 const Home = () => {
   const { user } = useAuthContext();
   const navigate = useNavigate();
+
   useEffect(() => {
     if (!user) {
       navigate("/login");
     }
   }, [user]);
+
   return (
     <div className="home pages">
       <WorkoutList />
